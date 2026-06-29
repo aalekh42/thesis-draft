@@ -1,0 +1,133 @@
+\documentclass[sigconf,screen,anonymous]{acmart}
+
+\setcopyright{none}
+\settopmatter{printacmref=false, printccs=false, printfolios=true}
+\renewcommand\footnotetextcopyrightpermission[1]{}
+\pagestyle{plain}
+
+\acmConference[SIGCSE TS Poster Submission]{SIGCSE Technical Symposium Poster Submission}{2026}{United States}
+\acmBooktitle{SIGCSE Technical Symposium Poster Submission}
+\acmYear{2027}
+\acmDOI{}
+\acmISBN{}
+
+\usepackage{balance}
+\usepackage{booktabs}
+\usepackage{tabularx}
+
+\begin{document}
+
+\title{What Students Include and Omit When Framing Data Science Problems in a Course Completion Scenario}
+
+\author{Anonymous Author(s)}
+\affiliation{\institution{Anonymous Institution}\country{Anonymous}}
+\email{anonymous@example.com}
+
+\begin{abstract}
+Problem formulation is a central but often undertaught skill in data science education. This poster presents a descriptive analysis of student problem statements written for a course completion scenario. Of 32~participants across three expertise levels, 19~completed the task, with completion rates rising sharply with expertise (25\% beginners to 89\% advanced). Component coding was applied to the unaided Phase~1 (pre-AI) drafts of all 19~completers to establish a clean baseline. Aligned problem statements and data features appeared most often (84\% and 79\% of participants), while constraints (32\%), success criteria (32\%), and stakeholder actionability (42\%) appeared less often, and ethics/privacy/fairness least often (11\%). Among the 13 completers who entered the AI-scaffolding phase, 77\% of scaffold suggestions were accepted; preliminary qualitative inspection suggests that accepted suggestions concentrated on components often absent from unaided drafts, a pattern to be confirmed in the full study. The poster contributes a coding scheme and early evidence to inform rubrics and AI-scaffolding design.
+\end{abstract}
+
+\keywords{data science education, problem formulation, problem framing, assessment, responsible data science, AI scaffolding}
+
+\maketitle
+
+\section{Introduction}
+Data science courses often emphasize downstream skills such as cleaning data, selecting features, training models, evaluating accuracy, and communicating results. Project quality also depends on the earlier skill of framing the problem. A well-framed data science problem identifies the context, objective, data, constraints, success criteria, and possible action. Undergraduate data science guidance emphasizes connections among computational work, substantive questions, communication, and responsible practice~\cite{nasem2018data}. Course designs for data science describe the analysis spectrum as beginning with asking an interesting question and continuing through analysis and communication~\cite{baumer2015course}. Data science literacy frames literacy as a broader set of practices for working with, interpreting, presenting, and using data responsibly~\cite{dichev2017data}. Problem framing requires technical and contextual reasoning. Students must decide what model could be trained, what question is worth asking, whose decision the analysis supports, what tradeoffs matter, and how success should be judged. When students move too quickly to ``train a classifier,'' they may leave intervention design, privacy, fairness, missing data, and educational value underdeveloped.
+
+\textbf{Research question.} What components do students include or omit when independently framing a data science problem? The analysis focuses on participation patterns, draft quality, instructional needs visible in unaided drafts, and which components AI scaffolds most often addressed.
+
+\section{Study Context and Data}
+Participants framed a data science problem in a realistic education setting: a learning platform with weak course completion. The scenario described platform records that could inform the analysis, including learner background, courses taken, engagement signals such as login frequency and video viewing, assessment performance, and completion status.
+
+\noindent\textbf{Task summary.} The prompt asked participants to write a problem statement and named five facets of a strong response: surrounding context, analytic goal, relevant limitations, intended approach, and how a result would be judged. Thirty-two participants attempted the task across three self-reported expertise levels: 8~beginner, 15~intermediate, and 9~advanced. Nineteen completed it (59.4\%). Completion increased with expertise: 2/8 beginners (25\%), 9/15 intermediates (60\%), and 8/9 advanced (89\%), suggesting that completion may be expertise-sensitive. Completed Phase~1 drafts ranged from 20 to 224 words (mean~69.5, median~46). External raters scored them on a 1--5 scale for creativity (mean~3.21), clarity (4.24), completeness (3.68), and feasibility (4.53). Of the 19 completers, 13 entered a calibrated AI-scaffolding phase, where 77\% of scaffold suggestions were accepted; the remaining 6 completed the task without AI exposure. Component coding was applied to the unaided Phase~1 drafts of all 19~completers.
+
+
+\section{Coding Method}
+For all 19~completers, we applied binary present/absent coding for eight components (Table~\ref{tab:rubric}) to their unaided Phase~1 drafts. These participants produced 26~unaided drafts, because some submitted more than one. For participant-level counts, a component was counted as present if it appeared in any of that participant's unaided drafts. Five codes reflected facets named in the prompt: alignment with the course completion context, analytic objective, method/model, constraints, and success criteria. The data/features code reflected scenario information because the prompt listed available platform records. Stakeholder/actionability and ethics/privacy/fairness served as extended responsible framing indicators beyond the prompt. The success criteria code required more than metric names: a draft needed a target, threshold, impact measure, or interpretable standard. Two human coders independently applied the rubric to anonymized draft text without viewing expertise levels across 208~binary decisions (26~drafts $\times$ 8~components).
+
+\begin{table}[t]
+\caption{Coding rubric for eight binary present/absent components. Observed presence rates appear in Figure~\ref{fig:components}.}
+\label{tab:rubric}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\columnwidth}{p{0.30\columnwidth} X}
+\toprule
+\textbf{Component} & \textbf{Counts as present when the draft\dots} \\
+\midrule
+\multicolumn{2}{l}{\textit{Scenario information}} \\
+Data/features      & Identifies specific available data or features to use \\
+\midrule
+\multicolumn{2}{l}{\textit{Prompt-named facets}} \\
+Aligned problem    & Keeps the framing centered on course completion or dropout \\
+Analytic objective & States what the analysis should produce \\
+Method/model       & Names a technique or model class \\
+Explicit constraints & Names a real limitation, such as missing data, privacy, imbalance, or scale \\
+Success criteria   & Defines a target, threshold, impact measure, or interpretable standard \\
+\midrule
+\multicolumn{2}{l}{\textit{Extended responsible framing indicators}} \\
+Stakeholder/action & Connects the result to a decision or intervention \\
+Ethics/privacy/fairness & Raises responsible use, bias, privacy, or demographic data concerns \\
+\bottomrule
+\end{tabularx}
+\vspace{-1.0em}
+\end{table}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.99\columnwidth]{latest_image.png}
+  \caption{Component presence in unaided Phase~1 problem statements. Participant-level counts (n=19) are the primary summary and draft-level counts (n=26) are a transparency check.}
+  \Description{Horizontal bar chart showing component presence percentages at draft and participant levels for all 19 completers.}
+  \label{fig:components}
+  \vspace{-1.0em}
+\end{figure}
+
+\section{Preliminary Findings}
+Figure~\ref{fig:components} shows a broad gradient across coded components. Because several students submitted multiple unaided drafts, we treat participant-level counts as the primary summary and draft-level counts as a transparency check. Students included data and modeling components more often than broader problem quality and responsible framing components.
+
+Among prompt-named facets, alignment (16/19), analytic objective (15/19), and method/model (13/19) appeared more often than constraints (6/19) and success criteria (6/19). The data/features code appeared in 15/19 participants. Stakeholder actionability appeared in 8/19 and ethics/privacy/fairness in 2/19. Most drafts mentioned data such as demographics, login frequency, video watch time, quiz scores, or completion records. Many described the task as prediction, dropout detection, or binary classification. One short draft framed the task almost entirely as a modeling problem: ``Train a classifier to early classify the students. Binary classification problem.'' Some drafts named accuracy, precision, recall, or F1-score, but many did not specify a threshold, target level of improvement, or decision-relevant standard. Two qualitative patterns sharpen the count-based results. First, three drafts exhibited \textbf{problem drift}, shifting from course completion to content consumption questions. Second, several drafts used \textbf{method-first framing}, moving quickly to model choice while leaving context, constraints, and success criteria underdeveloped.
+
+\section{Discussion}
+These results suggest students often recognize the surface structure of a data science task before producing a complete framing. Saying ``build a classifier to predict dropout'' identifies a technical approach while leaving the enabled intervention, data limitations, and success criteria underspecified. This aligns with accounts of problem solving that distinguish problems by structuredness and complexity~\cite{jonassen2000design}, and with fairness work showing that formulation choices shape the ethical meaning of data science systems~\cite{passi2019problem}.
+
+The AI scaffold data offer preliminary support for these instructional implications. Among the 13~completers who entered the scaffolding phase, 77\% of suggestions were accepted. Qualitative inspection suggests acceptance concentrated on components frequently absent from unaided drafts, such as constraints, success criteria, and stakeholder actionability. These preliminary patterns suggest that students often accept cues addressing these gaps, even though the components are routinely omitted without prompting. A systematic breakdown by hint type is planned for the full study. The steep expertise gradient in completion rates (25\% beginners vs.\ 89\% advanced) further suggests that completion may be expertise-sensitive, making scaffold support for beginners especially important.
+
+Three instructional moves follow. First, make problem framing a graded skill with rubrics that separately assess context, objective, constraints, and success criteria. Second, ask students to justify why a prediction is actionable. Third, explicitly prompt for stakeholder use and ethical risks, as these appeared in fewer than half of unaided drafts yet were addressed when directly cued via scaffolds. This analysis has a small sample (32~participants, 19~completers) and one scenario. Only two beginner sessions appear in the coded subset, limiting conclusions about novice framing; recruiting beginners is a priority given their 25\% completion rate. Next steps include a larger balanced sample across multiple scenarios in a pre-registered follow-up.
+
+\vspace{-0.5em}
+\section{Conclusion}
+Of 32~participants, 19~completed the task, with completion rising from 25\% among beginners to 89\% among advanced students. Among coded unaided drafts, students named variables and modeling goals more often than constraints, success criteria, stakeholder actionability, or ethical considerations. Constraints and success criteria were named in the task prompt but were still often omitted, while stakeholder actionability and ethics/privacy/fairness appeared less often as extended responsible-framing indicators. A 77\% acceptance rate for AI scaffold suggestions, with preliminary qualitative indication that accepted hints addressed these absent components, suggests that targeted prompting may help students address these gaps. Treating problem framing as a separately assessed competency may help students move from ``What model can I train?'' to ``What problem should this analysis responsibly solve?''
+
+\balance
+{\scriptsize
+\begin{thebibliography}{5}
+\setlength{\itemsep}{0pt}
+\setlength{\parskip}{0pt}
+
+\bibitem{nasem2018data}
+National Academies of Sciences, Engineering, and Medicine. 2018.
+\emph{Data Science for Undergraduates: Opportunities and Options}.
+Washington, DC: The National Academies Press. doi:10.17226/25104.
+
+\bibitem{baumer2015course}
+Ben Baumer. 2015. A data science course for undergraduates: Thinking with data.
+\emph{The American Statistician} 69, 4 (2015), 334--342. doi:10.1080/00031305.2015.1081105.
+
+\bibitem{dichev2017data}
+Christo Dichev and Darina Dicheva. 2017. Towards data science literacy.
+\emph{Procedia Computer Science} 108 (2017), 2151--2160.
+doi:10.1016/j.procs.2017.05.240.
+
+\bibitem{jonassen2000design}
+David H. Jonassen. 2000. Toward a design theory of problem solving.
+\emph{Educational Technology Research and Development} 48 (2000), 63--85.
+doi:10.1007/BF02300500.
+
+\bibitem{passi2019problem}
+Samir Passi and Solon Barocas. 2019. Problem formulation and fairness.
+In \emph{Proceedings of the Conference on Fairness, Accountability, and Transparency (FAT* '19)}.
+ACM, 39--48. doi:10.1145/3287560.3287567.
+
+\end{thebibliography}
+}
+
+\end{document}
