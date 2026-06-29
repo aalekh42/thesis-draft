@@ -1,0 +1,2 @@
+total_participants,completers,non_completers,completion_rate_pct,expertise_beginner,expertise_intermediate,expertise_advanced,expertise_score_mean,expertise_score_median,pre_test_score_mean,ai_attitude_score_mean,word_count_min,word_count_mean,word_count_median,word_count_max,time_spent_min_s,time_spent_median_s,time_spent_max_s,revision_min,revision_mean,revision_max
+30,17,13,56.7,8,14,8,9.07,9.0,4.67,5.2,22,113.5,106.0,225,7,172.0,529,0,13.1,60

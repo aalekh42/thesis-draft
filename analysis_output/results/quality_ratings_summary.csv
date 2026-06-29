@@ -1,0 +1,5 @@
+,n,mean,std,min,median,max
+avg_creativity,17.0,3.44,0.6,2.0,3.5,4.5
+avg_clarity,17.0,4.14,1.49,2.25,3.75,6.0
+avg_completeness,17.0,3.77,1.4,2.0,3.25,6.25
+avg_feasibility,17.0,4.53,1.12,2.5,4.5,6.0

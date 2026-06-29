@@ -1,0 +1,4 @@
+expertise_level,total,completed,non_completed,completion_rate_pct
+beginner,8,2,6,25.0
+intermediate,14,8,6,57.1
+advanced,8,7,1,87.5
