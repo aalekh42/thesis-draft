@@ -39,11 +39,11 @@ Data science courses often emphasize downstream skills such as cleaning data, se
 \section{Study Context and Data}
 Participants framed a data science problem in a realistic education setting: a learning platform with weak course completion. The scenario described platform records that could inform the analysis, including learner background, courses taken, engagement signals such as login frequency and video viewing, assessment performance, and completion status.
 
-\noindent\textbf{Task summary.} The prompt asked participants to write a problem statement and named five facets of a strong response: surrounding context, analytic goal, relevant limitations, intended approach, and how a result would be judged. Thirty-two participants attempted the task across three self-reported expertise levels: 8~beginner, 15~intermediate, and 9~advanced. Nineteen completed it (59.4\%). Completion increased with expertise: 2/8 beginners (25\%), 9/15 intermediates (60\%), and 8/9 advanced (89\%), suggesting that completion may be expertise-sensitive. Completed Phase~1 drafts ranged from 20 to 224 words (mean~69.5, median~46). External raters scored them on a 1--5 scale for creativity (mean~3.21), clarity (4.24), completeness (3.68), and feasibility (4.53). Of the 19 completers, 13 entered a calibrated AI-scaffolding phase, where 77\% of scaffold suggestions were accepted; the remaining 6 completed the task without AI exposure. Component coding was applied to the unaided Phase~1 drafts of all 19~completers.
+\noindent\textbf{Task summary.} The prompt asked participants to write a problem statement and named five facets of a strong response: surrounding context, analytic goal, relevant limitations, intended approach, and how a result would be judged. Thirty-two participants attempted the task across three self-reported expertise levels: 8~beginner, 15~intermediate, and 9~advanced. Nineteen completed it (59.4\%). Completion increased with expertise: 2/8 beginners (25\%), 9/15 intermediates (60\%), and 8/9 advanced (89\%), suggesting that completion may be expertise-sensitive. Completed Phase~1 drafts ranged from 20 to 224 words (mean~69.5, median~46). External raters scored them on a 1--7 scale for creativity (mean~3.21), clarity (4.24), completeness (3.68), and feasibility (4.53). Of the 19 completers, 13 entered a calibrated AI-scaffolding phase, where 77\% of scaffold suggestions were accepted; the remaining 6 completed the task without AI exposure. Component coding was applied to the unaided Phase~1 drafts of all 19~completers.
 
 
 \section{Coding Method}
-For all 19~completers, we applied binary present/absent coding for eight components (Table~\ref{tab:rubric}) to their unaided Phase~1 drafts. These participants produced 26~unaided drafts, because some submitted more than one. For participant-level counts, a component was counted as present if it appeared in any of that participant's unaided drafts. Five codes reflected facets named in the prompt: alignment with the course completion context, analytic objective, method/model, constraints, and success criteria. The data/features code reflected scenario information because the prompt listed available platform records. Stakeholder/actionability and ethics/privacy/fairness served as extended responsible framing indicators beyond the prompt. The success criteria code required more than metric names: a draft needed a target, threshold, impact measure, or interpretable standard. Two human coders independently applied the rubric to anonymized draft text without viewing expertise levels across 208~binary decisions (26~drafts $\times$ 8~components).
+For all 19~completers, we applied binary present/absent coding for eight components (Table~\ref{tab:rubric}) to their unaided Phase~1 drafts. These participants produced 26~unaided drafts, because some submitted more than one. For participant-level counts, a component was counted as present if it appeared in any of that participant's unaided drafts. Five codes reflected facets named in the prompt: alignment with the course completion context, analytic objective, method/model, constraints, and success criteria. The data/features code reflected scenario information because the prompt listed available platform records. Stakeholder/actionability and ethics/privacy/fairness served as extended responsible framing indicators beyond the prompt. The success criteria code required more than metric names: a draft needed a target, threshold, impact measure, or interpretable standard. Two human coders independently applied the rubric to anonymized draft text without viewing expertise levels. Agreement was 95.0\% across 208~binary decisions (26~drafts $\times$ 8~components; Cohen's~$\kappa=.90$); disagreements were resolved through discussion. Of these 19 coded completers, 13 subsequently entered the scaffolding phase, enabling within-person comparison of unaided framing patterns and scaffold acceptance.
 
 \begin{table}[t]
 \caption{Coding rubric for eight binary present/absent components. Observed presence rates appear in Figure~\ref{fig:components}.}
@@ -66,7 +66,7 @@ Success criteria   & Defines a target, threshold, impact measure, or interpretab
 \midrule
 \multicolumn{2}{l}{\textit{Extended responsible framing indicators}} \\
 Stakeholder/action & Connects the result to a decision or intervention \\
-Ethics/privacy/fairness & Raises responsible use, bias, privacy, or demographic data concerns \\
+Ethics/privacy/\newline fairness & Raises responsible use, bias, privacy, or demographic data concerns \\
 \bottomrule
 \end{tabularx}
 \vspace{-1.0em}
@@ -74,11 +74,11 @@ Ethics/privacy/fairness & Raises responsible use, bias, privacy, or demographic 
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=0.99\columnwidth]{latest_image.png}
+  \includegraphics[width=0.99\columnwidth]{latest_component_presence.png}
   \caption{Component presence in unaided Phase~1 problem statements. Participant-level counts (n=19) are the primary summary and draft-level counts (n=26) are a transparency check.}
   \Description{Horizontal bar chart showing component presence percentages at draft and participant levels for all 19 completers.}
   \label{fig:components}
-  \vspace{-1.0em}
+  \vspace{-2.0em}
 \end{figure}
 
 \section{Preliminary Findings}
@@ -89,18 +89,19 @@ Among prompt-named facets, alignment (16/19), analytic objective (15/19), and me
 \section{Discussion}
 These results suggest students often recognize the surface structure of a data science task before producing a complete framing. Saying ``build a classifier to predict dropout'' identifies a technical approach while leaving the enabled intervention, data limitations, and success criteria underspecified. This aligns with accounts of problem solving that distinguish problems by structuredness and complexity~\cite{jonassen2000design}, and with fairness work showing that formulation choices shape the ethical meaning of data science systems~\cite{passi2019problem}.
 
-The AI scaffold data offer preliminary support for these instructional implications. Among the 13~completers who entered the scaffolding phase, 77\% of suggestions were accepted. Qualitative inspection suggests acceptance concentrated on components frequently absent from unaided drafts, such as constraints, success criteria, and stakeholder actionability. These preliminary patterns suggest that students often accept cues addressing these gaps, even though the components are routinely omitted without prompting. A systematic breakdown by hint type is planned for the full study. The steep expertise gradient in completion rates (25\% beginners vs.\ 89\% advanced) further suggests that completion may be expertise-sensitive, making scaffold support for beginners especially important.
+The AI scaffold data offer preliminary support. Among the 13~completers who entered the scaffolding phase, 77\% of suggestions were accepted; qualitative inspection suggests acceptance concentrated on components frequently absent from unaided drafts, such as constraints, success criteria, and stakeholder actionability. The steep expertise gradient in completion rates (25\% beginners vs.\ 89\% advanced) further suggests that scaffold support for beginners is especially important.
 
-Three instructional moves follow. First, make problem framing a graded skill with rubrics that separately assess context, objective, constraints, and success criteria. Second, ask students to justify why a prediction is actionable. Third, explicitly prompt for stakeholder use and ethical risks, as these appeared in fewer than half of unaided drafts yet were addressed when directly cued via scaffolds. This analysis has a small sample (32~participants, 19~completers) and one scenario. Only two beginner sessions appear in the coded subset, limiting conclusions about novice framing; recruiting beginners is a priority given their 25\% completion rate. Next steps include a larger balanced sample across multiple scenarios in a pre-registered follow-up.
+Three instructional moves follow: make problem framing a graded skill with rubrics that separately assess context, objective, constraints, and success criteria; ask students to justify why a prediction is actionable; and explicitly prompt for stakeholder use and ethical risks, as these appeared in fewer than half of unaided drafts yet were addressed when directly cued via scaffolds. This analysis has a small sample (32~participants, 19~completers) and one scenario. Only 2 of the 19 completers were beginners, limiting conclusions about novice framing; recruiting beginners is a priority given their 25\% completion rate. Next steps include a larger balanced sample across multiple scenarios in a pre-registered follow-up.
 
-\vspace{-0.5em}
+\vspace{-1.0em}
 \section{Conclusion}
 Of 32~participants, 19~completed the task, with completion rising from 25\% among beginners to 89\% among advanced students. Among coded unaided drafts, students named variables and modeling goals more often than constraints, success criteria, stakeholder actionability, or ethical considerations. Constraints and success criteria were named in the task prompt but were still often omitted, while stakeholder actionability and ethics/privacy/fairness appeared less often as extended responsible-framing indicators. A 77\% acceptance rate for AI scaffold suggestions, with preliminary qualitative indication that accepted hints addressed these absent components, suggests that targeted prompting may help students address these gaps. Treating problem framing as a separately assessed competency may help students move from ``What model can I train?'' to ``What problem should this analysis responsibly solve?''
 
+\vspace{-0.5em}
 \balance
 {\scriptsize
 \begin{thebibliography}{5}
-\setlength{\itemsep}{0pt}
+\setlength{\itemsep}{-1pt}
 \setlength{\parskip}{0pt}
 
 \bibitem{nasem2018data}
